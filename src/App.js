@@ -1,18 +1,14 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, lazy} from 'react';
 import './App.css';
-// import BigComponent from './components/BigComponent';
-import Cohort from './components/Cohort';
-
-const BigComponent = React.lazy(() => import('./components/BigComponent'));
+const BigComponent = lazy(() => import('./components/BigComponent'));
 
 function App() {
   return (
     <div className="App">
-      <Cohort />
-      {/* <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<h1>Loading...</h1>}>
         <BigComponent />
       </Suspense>
-      <h1>Hello!</h1> */}
+      <h1>Hello!</h1>
     </div>
   );
 }
